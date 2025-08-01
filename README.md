@@ -75,11 +75,11 @@ You can click on either `Show IP & Port` to view the IP and Port the App is runn
 
 | Tray Icon | Menu Options |
 |-----------|--------------|
-| ![tray_icon](path/to/tray_icon.png) | ![tray_menu](path/to/tray_menu.png) |
+| <img src="screenshots/tray_icon.png" width="400"/> | <img src="screenshots/tray_menu.png" width="300"/> |
 
 | Touchpad Mode | Keyboard Mode |
 |---------------|---------------|
-| ![touchpad]() | ![keyboard]() |
+| <img src="screenshots/touchpad.jpg" width="150"/> | <img src="screenshots/keyboard.jpg" width="300"/> |
 
 ## 🔐 Network Note
 
