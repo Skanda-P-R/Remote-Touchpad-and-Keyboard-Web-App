@@ -1,4 +1,6 @@
-# 📱 Touchlet - A Remote Touchpad and Keyboard Web App
+<center><img src="Mouse_Icon.png" width="150"/></center>
+
+# Touchlet - A Remote Touchpad and Keyboard Web App
 
 This project turns your mobile phone or tablet into a wireless **touchpad and keyboard** for your computer using a local network. It includes support for mouse movement, clicks, drag, two-finger scrolling, full keyboard, volume control, and media keys — all accessible from your phone's browser!
 
