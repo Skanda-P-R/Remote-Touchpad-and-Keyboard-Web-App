@@ -1,4 +1,6 @@
-<center><img src="Mouse_Icon.png" width="150"/></center>
+<div align="center">
+<img src="Mouse_Icon.png" width="150"/>
+</div>
 
 # Touchlet - A Remote Touchpad and Keyboard Web App
 
