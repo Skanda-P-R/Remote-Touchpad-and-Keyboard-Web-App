@@ -1,0 +1,149 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    background: #111;
+    color: white;
+    touch-action: none;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.btn {
+    background: #444;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    margin: 4px;
+    min-width: 40px;
+    flex: 1;
+    transition: background-color 0.15s ease;
+}
+
+.btn.active {
+    background-color: #08f !important;
+    color: white;
+}
+
+.btn.pressed {
+    background-color: #08f !important;
+    color: white;
+}
+
+#touchpad {
+    background: #222;
+    border-radius: 10px;
+    flex: 1;
+    margin: 10px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#media {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#volume {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+#modeButtons {
+    display: none;
+    text-align: center;
+    padding: 10px;
+}
+
+#touchpadContainer,
+#keyboardContainer {
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#keyboardContainer .row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#keyboardContainer .btn {
+    flex: none;
+    font-size: 12px;
+    padding: 10px 5px;
+    margin: 2px;
+    min-width: 30px;
+}
+
+.space {
+    flex-grow: 5;
+}
+
+@media (orientation: portrait) {
+    #media {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #volume {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #modeButtons {
+        display: none;
+    }
+
+    #keyboardContainer {
+        display: none !important;
+    }
+
+    #touchpadContainer {
+        display: flex;
+    }
+}
+
+@media (orientation: landscape) {
+    #media,
+    #volume {
+        display: none !important;
+    }
+
+    #modeButtons {
+        display: block;
+    }
+}
+
+#keyboardContainer {
+    padding-bottom: 20px;
+}

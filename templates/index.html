@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote Touchpad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div id="modeButtons">
+        <button class="btn" onclick="showTouchpad()">Touchpad</button>
+        <button class="btn" onclick="showKeyboard()">Keyboard</button>
+    </div>
+
+    <div id="touchpadContainer">
+        <div id="touchpad"></div>
+        <div id="buttons">
+            <button class="btn" onclick="leftClick()">Left</button>
+            <button class="btn" onclick="rightClick()">Right</button>
+        </div>
+    </div>
+
+    <div id="keyboardContainer"></div>
+
+    <div id="media">
+        <button class="btn" onclick="media('prev')">⏮️</button>
+        <button class="btn" onclick="media('play_pause')">⏯️</button>
+        <button class="btn" onclick="media('next')">⏭️</button>
+    </div>
+
+    <div id="volume">
+        <label for="volumeSlider">Volume</label>
+        <input type="range" id="volumeSlider" min="0" max="100" value="50" onchange="setVolume(this.value)">
+    </div>
+
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+Flask
+Flask-SocketIO
+pyautogui
+pycaw
+comtypes
+pywin32
+pystray
+Pillow
+qrcode
