@@ -14,7 +14,7 @@ This project turns your mobile phone or tablet into a wireless **touchpad and ke
 - The web app provides:
   - A touchpad that sends real-time mouse movements.
   - Left/right click buttons.
-  - A full on-screen keyboard with modifier keys.
+  - A full on-screen keyboard with modifier keys **(Accessed by turning your mobile to landscape mode)**.
   - Volume control via a slider.
   - Media control (Play/Pause, Next, Previous).
 
