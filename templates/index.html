@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Remote Touchpad</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
     <div id="modeButtons">
         <button class="btn" onclick="showTouchpad()">Touchpad</button>
         <button class="btn" onclick="showKeyboard()">Keyboard</button>
     </div>
+    <div id="touchpadWrapper">
+        <div id="touchpadContainer">
+            <div id="touchpad"></div>
+            <div id="buttons">
+                <button class="btn" onclick="leftClick()">Left</button>
+                <button class="btn" onclick="rightClick()">Right</button>
+            </div>
+        </div>
 
-    <div id="touchpadContainer">
-        <div id="touchpad"></div>
-        <div id="buttons">
-            <button class="btn" onclick="leftClick()">Left</button>
-            <button class="btn" onclick="rightClick()">Right</button>
+        <div id="scrollContainer">
+            <div id="scrollBar"></div>
         </div>
     </div>
 
@@ -37,4 +44,5 @@
     <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
+
 </html>

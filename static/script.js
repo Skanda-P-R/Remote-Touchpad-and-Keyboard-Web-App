@@ -1,6 +1,6 @@
 const socket = io();
 const touchpad = document.getElementById('touchpad');
-const touchpadContainer = document.getElementById('touchpadContainer');
+const touchpadContainer = document.getElementById('touchpadWrapper');
 const keyboardContainer = document.getElementById('keyboardContainer');
 const modeButtons = document.getElementById('modeButtons');
 
@@ -285,3 +285,46 @@ function checkOrientation() {
 renderKeyboard();
 checkOrientation();
 window.addEventListener("orientationchange", () => setTimeout(checkOrientation, 200));
+
+const scrollBar = document.getElementById("scrollBar");
+
+let isDraggingScroll = false;
+let startY = 0;
+
+scrollBar.addEventListener("mousedown", (e) => {
+    isDraggingScroll = true;
+    startY = e.clientY;
+    scrollBar.style.cursor = "grabbing";
+});
+
+document.addEventListener("mousemove", (e) => {
+    if (isDraggingScroll) {
+        const dy = e.clientY - startY;
+        socket.emit("scroll", { dy: dy });
+        startY = e.clientY;
+    }
+});
+
+document.addEventListener("mouseup", () => {
+    if (isDraggingScroll) {
+        isDraggingScroll = false;
+        scrollBar.style.cursor = "grab";
+    }
+});
+
+scrollBar.addEventListener("touchstart", (e) => {
+    isDraggingScroll = true;
+    startY = e.touches[0].clientY;
+});
+
+document.addEventListener("touchmove", (e) => {
+    if (isDraggingScroll) {
+        const dy = e.touches[0].clientY - startY;
+        socket.emit("scroll", { dy: dy });
+        startY = e.touches[0].clientY;
+    }
+}, { passive: false });
+
+document.addEventListener("touchend", () => {
+    isDraggingScroll = false;
+});
